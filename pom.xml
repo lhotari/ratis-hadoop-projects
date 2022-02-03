@@ -16,19 +16,19 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>org.apache</groupId>
-    <artifactId>apache</artifactId>
-    <version>23</version>
+    <groupId>org.apache.ratis</groupId>
+    <artifactId>ratis</artifactId>
+    <version>2.2.0</version>
     <relativePath /> <!-- resolve from repository -->
   </parent>
 
-  <artifactId>ratis</artifactId>
+  <artifactId>ratis-hadoop-projects</artifactId>
   <groupId>org.apache.ratis</groupId>
   <version>2.3.0-SNAPSHOT</version>
-  <name>Apache Ratis</name>
+  <name>Apache Ratis Hadoop Projects</name>
   <packaging>pom</packaging>
   <description>
-    Apache Ratis is an open source java implementation for RAFT consensus protocol
+    Apache Ratis Hadoop Projects are Hadoop-related subprojects of Apache Ratis
   </description>
   <url>https://ratis.apache.org/</url>
   <inceptionYear>2017</inceptionYear>
@@ -69,10 +69,10 @@
   </licenses>
 
   <modules>
-    <module>ratis-resource-bundle</module>
+    <module>ratis-hadoop-projects-resource-bundle</module>
     <module>ratis-hadoop</module>
     <module>ratis-logservice</module>
-    <module>ratis-assembly</module>
+    <module>ratis-hadoop-projects-assembly</module>
   </modules>
 
   <pluginRepositories>
@@ -215,12 +215,6 @@
     <dependencies>
       <!-- Internal dependencies -->
       <dependency>
-        <artifactId>ratis-docs</artifactId>
-        <groupId>org.apache.ratis</groupId>
-        <version>${ratis.version}</version>
-      </dependency>
-
-      <dependency>
         <artifactId>ratis-client</artifactId>
         <groupId>org.apache.ratis</groupId>
         <version>${ratis.version}</version>
@@ -246,23 +240,6 @@
         <scope>test</scope>
       </dependency>
 
-      <dependency>
-        <artifactId>ratis-examples</artifactId>
-        <groupId>org.apache.ratis</groupId>
-        <version>${ratis.version}</version>
-      </dependency>
-      <dependency>
-        <artifactId>ratis-examples</artifactId>
-        <groupId>org.apache.ratis</groupId>
-        <version>${ratis.version}</version>
-        <type>test-jar</type>
-        <scope>test</scope>
-      </dependency>
-      <dependency>
-        <artifactId>ratis-experiments</artifactId>
-        <groupId>org.apache.ratis</groupId>
-        <version>${ratis.version}</version>
-      </dependency>
       <dependency>
        <artifactId>ratis-metrics</artifactId>
        <groupId>org.apache.ratis</groupId>
@@ -286,11 +263,6 @@
         <version>${ratis.version}</version>
         <type>test-jar</type>
         <scope>test</scope>
-      </dependency>
-      <dependency>
-        <artifactId>ratis-shell</artifactId>
-        <groupId>org.apache.ratis</groupId>
-        <version>${ratis.version}</version>
       </dependency>
       <dependency>
         <artifactId>ratis-grpc</artifactId>
@@ -322,19 +294,6 @@
         <artifactId>ratis-proto</artifactId>
         <groupId>org.apache.ratis</groupId>
         <version>${ratis.version}</version>
-      </dependency>
-
-      <dependency>
-        <artifactId>ratis-replicated-map</artifactId>
-        <groupId>org.apache.ratis</groupId>
-        <version>${ratis.version}</version>
-      </dependency>
-      <dependency>
-        <artifactId>ratis-replicated-map</artifactId>
-        <groupId>org.apache.ratis</groupId>
-        <version>${ratis.version}</version>
-        <type>test-jar</type>
-        <scope>test</scope>
       </dependency>
 
       <dependency>
@@ -570,7 +529,7 @@
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-assembly-plugin</artifactId>
           <configuration>
-            <!--Defer to the ratis-assembly sub-module.  It does all assembly-->
+            <!--Defer to the ratis-hadoop-projects-assembly sub-module.  It does all assembly-->
             <skipAssembly>true</skipAssembly>
           </configuration>
         </plugin>
