@@ -14,11 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-FROM openjdk:8-jdk-alpine
+FROM eclipse-temurin:8
 
 ######
-RUN apk update && apk upgrade
-
 ENV BASEDIR /opt/ratis-logservice/
 
 # Our ratis-logservice tarball
